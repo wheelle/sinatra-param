@@ -31,7 +31,8 @@ module Sinatra
         if content_type and content_type.match(mime_type(:json))
           error = {message: error, errors: {name => exception.message}}.to_json
         end
-
+        
+        params.delete(name)
         # halt 400, error
       end
     end
@@ -48,6 +49,7 @@ module Sinatra
             error = {message: error}.to_json
           end
 
+          params.delete(name)
           # halt 400, error
         end
       end
