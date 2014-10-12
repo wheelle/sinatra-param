@@ -32,7 +32,7 @@ module Sinatra
           error = {message: error, errors: {name => exception.message}}.to_json
         end
 
-        halt 400, error
+        # halt 400, error
       end
     end
 
@@ -48,7 +48,7 @@ module Sinatra
             error = {message: error}.to_json
           end
 
-          halt 400, error
+          # halt 400, error
         end
       end
     end
